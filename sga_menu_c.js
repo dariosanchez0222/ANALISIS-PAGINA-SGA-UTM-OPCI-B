@@ -1,5 +1,5 @@
 // sga_menu_c.js
-// Lógica del prototipo Versión C del menú SGA
+// Lógica del prototipo B del menú SGA
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuCards = document.querySelectorAll('.menu-card');
@@ -99,3 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
