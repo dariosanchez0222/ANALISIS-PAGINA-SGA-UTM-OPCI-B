@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SGA UTM - Menú Versión B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Prototipo de menú versión C para pruebas de usabilidad A/B -->
+    <link rel="stylesheet" href="sga_menu_c.css">
+    <!-- Iconos (puedes cambiar el CDN o usar tus propios recursos) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="layout">
+    <!-- Barra lateral clara tipo “panel de tarjetas” -->
+    <aside class="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__brand">
+                <div class="sidebar__brand-badge">
+                    <span class="sidebar__brand-sigla">UTM</span>
+                </div>
+                <div class="sidebar__brand-text">
+                    <span class="sidebar__brand-sistema">SGA</span>
+                    <span class="sidebar__brand-sub">Sistema de Gestión Académica</span>
+                </div>
+            </div>
+            <div class="sidebar__user">
+                <div class="sidebar__user-avatar">DR</div>
+                <div class="sidebar__user-info">
+                    <span class="sidebar__user-name">NOMBRE1 NOMBRE2<br>APELLIDO1 APELLIDO2</span>
+                    <span class="sidebar__user-role">Estudiante · Ing. TI</span>
+                </div>
+                <button class="sidebar__logout">
+                    <i class="fa-solid fa-power-off"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="sidebar__nav">
+            <!-- Accesos rápidos como “chips” -->
+            <section class="nav-block">
+                <h2 class="nav-block__title">Accesos rápidos</h2>
+                <div class="quick-actions">
+                    <button class="chip" data-target="horario">
+                        <i class="fa-regular fa-calendar-check chip__icon"></i>
+                        Horario
+                    </button>
+                    <button class="chip" data-target="notas">
+                        <i class="fa-solid fa-list-check chip__icon"></i>
+                        Notas
+                    </button>
+                    <button class="chip" data-target="matricula">
+                        <i class="fa-solid fa-user-graduate chip__icon"></i>
+                        Matrícula
+                    </button>
+                </div>
+            </section>
+
+            <!-- Menú principal en tarjetas expansibles -->
+            <section class="nav-block">
+                <h2 class="nav-block__title">Menú principal</h2>
+
+                <div class="menu-card" data-section="academica">
+                    <button class="menu-card__header">
+                        <div class="menu-card__icon-wrapper">
+                            <i class="fa-solid fa-book-open menu-card__icon"></i>
+                        </div>
+                        <div class="menu-card__text">
+                            <span class="menu-card__title">Información académica</span>
+                            <span class="menu-card__subtitle">
+                                Datos, historial, certificados y horarios
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down menu-card__chevron"></i>
+                    </button>
+                    <ul class="menu-card__list">
+                        <li>
+                            <button class="menu-card__item" data-target="datos-personales">
+                                Datos personales
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="historial">
+                                Historial académico
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="certificados">
+                                Certificados
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="horario">
+                                Horarios
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-card" data-section="tramites">
+                    <button class="menu-card__header">
+                        <div class="menu-card__icon-wrapper">
+                            <i class="fa-solid fa-file-pen menu-card__icon"></i>
+                        </div>
+                        <div class="menu-card__text">
+                            <span class="menu-card__title">Gestión de trámites</span>
+                            <span class="menu-card__subtitle">
+                                Inscripciones, solicitudes, documentos y pagos
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down menu-card__chevron"></i>
+                    </button>
+                    <ul class="menu-card__list">
+                        <li>
+                            <button class="menu-card__item" data-target="matricula">
+                                Matrícula / inscripción
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="solicitudes">
+                                Solicitudes en línea
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="documentos">
+                                Documentos
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="pagos">
+                                Pagos y estados de cuenta
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-card" data-section="institucional">
+                    <button class="menu-card__header">
+                        <div class="menu-card__icon-wrapper">
+                            <i class="fa-solid fa-building-columns menu-card__icon"></i>
+                        </div>
+                        <div class="menu-card__text">
+                            <span class="menu-card__title">Información institucional</span>
+                            <span class="menu-card__subtitle">
+                                Manual, notificaciones y comunicados
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down menu-card__chevron"></i>
+                    </button>
+                    <ul class="menu-card__list">
+                        <li>
+                            <button class="menu-card__item" data-target="manual">
+                                Manual de usuario
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="notificaciones">
+                                Notificaciones
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="comunicados">
+                                Comunicados institucionales
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-card" data-section="configuracion">
+                    <button class="menu-card__header">
+                        <div class="menu-card__icon-wrapper">
+                            <i class="fa-solid fa-gear menu-card__icon"></i>
+                        </div>
+                        <div class="menu-card__text">
+                            <span class="menu-card__title">Configuración</span>
+                            <span class="menu-card__subtitle">
+                                Perfil, seguridad y acceso
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down menu-card__chevron"></i>
+                    </button>
+                    <ul class="menu-card__list">
+                        <li>
+                            <button class="menu-card__item" data-target="perfil">
+                                Perfil de usuario
+                            </button>
+                        </li>
+                        <li>
+                            <button class="menu-card__item" data-target="seguridad">
+                                Seguridad y acceso
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
+    </aside>
+
+    <!-- Área principal de contenido -->
+    <main class="main">
+        <header class="main__header">
+            <div class="main__breadcrumbs">Inicio · Prototipo · Versión C</div>
+            <h1 class="main__title">Prototipo Menú Versión C</h1>
+            <p class="main__subtitle">
+                Diseño alternativo con tarjetas claras, nuevo esquema de colores y navegación agrupada por tareas.
+                Uso exclusivo para evaluación de usabilidad en la asignatura de Interacción Humano-Computador.
+            </p>
+        </header>
+
+        <section class="main__content" id="content">
+            <article class="card card--welcome" id="panel-bienvenida">
+                <h2>Bienvenido al prototipo (Versión C)</h2>
+                <p>
+                    Utilice el menú de la izquierda para navegar por las diferentes secciones simuladas del SGA.
+                    Este diseño prioriza la legibilidad, el agrupamiento por tareas y el uso de tarjetas
+                    para ayudar al estudiante a localizar más rápido las opciones.
+                </p>
+                <ul class="card__list">
+                    <li>El menú se organiza en <strong>tarjetas expansibles</strong> por grandes bloques de tarea.</li>
+                    <li>Los accesos rápidos se presentan como <strong>chips</strong> en la parte superior.</li>
+                    <li>El área central muestra contenido simulado para cada módulo, útil para el test A/B.</li>
+                </ul>
+            </article>
+
+            <article class="card" id="panel-placeholder" hidden>
+                <h2 id="panel-title">Sección seleccionada</h2>
+                <p id="panel-description">
+                    Aquí se mostrará una descripción corta de la sección seleccionada.
+                </p>
+                <p class="card__hint">
+                    En el sistema real, esta área contendría tablas, formularios y elementos funcionales
+                    específicos de cada módulo del SGA (por ejemplo, el horario, las notas o el estado de cuenta).
+                </p>
+            </article>
+        </section>
+    </main>
+</div>
+
+<script src="sga_menu_c.js"></script>
+</body>
+</html>
